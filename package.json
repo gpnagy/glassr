@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Chrome extension for customizable screenshots.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build && cp manifest.json dist/"
   },
   "keywords": [
     "chrome-extension",

@@ -1,0 +1,13 @@
+/* A class added to the body to change the cursor to a crosshair. */
+body.crosshair-cursor-active {
+  cursor: crosshair !important;
+}
+
+/* The selection box that the user draws on the screen. */
+#screenshot-selection-box {
+  position: fixed;
+  background-color: rgba(0, 132, 255, 0.2);
+  border: 2px dashed rgba(0, 132, 255, 0.8);
+  box-sizing: border-box;
+  z-index: 999999; /* A very high z-index to ensure it's on top of everything. */
+}

@@ -1,42 +1,22 @@
 {
   "manifest_version": 3,
-  "name": "Liquid Glass Screenshots",
-  "version": "1.0.0",
-  "description": "Capture beautiful, customizable screenshots with a modern liquid glass aesthetic.",
+  "name": "Keyboard Shortcut Screenshot",
+  "version": "1.0",
+  "description": "Press a keyboard shortcut to select and capture a region of the screen.",
   "permissions": [
     "activeTab",
-    "scripting",
-    "storage",
-    "downloads",
-    "notifications"
+    "scripting"
   ],
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "public/icon16.png",
-      "48": "public/icon48.png",
-      "128": "public/icon128.png"
-    }
-  },
   "background": {
-    "service_worker": "background.js",
-    "type": "module"
+    "service_worker": "background.js"
   },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"]
+  "commands": {
+    "take-screenshot": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "Initiate screenshot capture"
     }
-  ],
-  "icons": {
-    "16": "public/icon16.png",
-    "48": "public/icon48.png",
-    "128": "public/icon128.png"
-  },
-  "web_accessible_resources": [
-    {
-      "resources": ["assets/*", "public/*"],
-      "matches": ["<all_urls>"]
-    }
-  ]
+  }
 }
